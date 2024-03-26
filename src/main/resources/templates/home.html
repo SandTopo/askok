@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="pregu" th:href="@{../static/css/pregu.css}">
+    <title>P R E G U N T A S   ----> OK</title>
+</head>
+<body>
+<div>
+    <img src="img/boy_ask.jpg" alt="logo">
+    <img th:src="@{/img/boy_ask.jpg}" alt="logo">
+</div>
+
+
+    <h1>P R E G U N T A S   ----> OK</h1>
+
+    <div>
+        <form th:action="@{/jugando}" method="get">
+            <div><label> User Name : <input type="text" name="username"/> </label></div>
+            <div><input type="submit" value="Jugar Ahora"/></div>
+        </form>
+
+    </div>
+</body>
+</html>

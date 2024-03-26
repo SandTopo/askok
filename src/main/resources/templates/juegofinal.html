@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="pregu" href="../static/css/pregu.css">
+    <title>P R E G U N T A S   ----> OK</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="../static/imgs/boy_ask_pq.jpg" alt="logo">
+</div>
+<h1>P R E G U N T A S   ----> OK</h1>
+<h2>R E S U L T A D O S</h2>
+<table>
+    <tr>
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+        <th>Correcto</th>
+    </tr>
+    <tr>
+        <td>Pregunta 1</td>
+        <td>Respuesta 1</td>
+        <td>Sí</td>
+    </tr>
+    <tr>
+        <td>Pregunta 2</td>
+        <td>Respuesta 2</td>
+        <td>No</td>
+    </tr>
+    <!-- Agrega más filas según sea necesario -->
+</table>
+<button onclick="window.location.href='login.html'">Ir al login</button>
+<button onclick="window.location.href='jugar.html'">Jugar de nuevo</button>
+</body>
+</html>
