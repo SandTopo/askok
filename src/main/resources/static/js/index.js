@@ -1,4 +1,4 @@
-window.onload = () => {
+/*window.onload = () => {
     document.getElementById("btnPedirDatos").onclick = () => {
 
         let url = location.origin + "/api/pedirdatos?dat=34&texto=hola";
@@ -39,4 +39,4 @@ window.onload = () => {
 
 
     }
-}
+}*/
