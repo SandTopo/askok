@@ -8,7 +8,7 @@
 
     <script>
         window.onload = function() {
-            var tiempoRestante = 60; // Tiempo en segundos
+            var tiempoRestante = 30; // Tiempo en segundos
             var contadorPuntuacion = 0;
 
             var contadorTiempo = setInterval(function() {
@@ -17,6 +17,7 @@
                 if (tiempoRestante < 0) {
                     clearInterval(contadorTiempo);
                     alert("¡Tiempo terminado!");
+                    window.location.href="juegofinal"
                 }
             }, 1000);
 
@@ -40,28 +41,40 @@
             function actualizarPuntuacion() {
                 document.getElementById("contador-puntuacion").innerHTML = "Puntuación: " + contadorPuntuacion;
             }
+
+            function btn(){
+                contador-preguntas++;
+            }
         };
     </script>
 
 </head>
 <body>
     <div>
-        <img src="../static/imgs/boy_ask_pq.jpg" alt="logo">
+        <img th:src="@{/img/boy_ask.jpg}" alt="logo">
     </div>
-<div>
+
     <h1>P R E G U N T A S   ----> OK</h1>
     <div>
-        <div id="contador-tiempo">Tiempo restante: 60 segundos</div>
+        <div id="contador-tiempo">Tiempo restante: 30 segundos</div>
         <div id="contador-puntuacion">Puntuación: 0</div>
-        <form>
-            <label for="pregunta">Pregunta:</label><br>
-            <input type="text" id="pregunta" name="pregunta"><br><br>
 
-            <button type="button" id="respuesta1">Respuesta 1</button><br><br>
+        <div id="contador-preguntas">Preguntas contestadas: 0</div>
 
-            <button type="button" id="respuesta2">Respuesta 2</button><br><br>
+        <form th:action="@{/juegofinal}" method="get">
+            <label for="labelpregunta">Pregunta:</label><br>
+            <input type="text" id="labelpregunta" name="pregunta"><br><br>
 
-            <button type="button" id="respuesta3">Respuesta 3</button><br><br>
+            <h1 id="pregunta">Pregunta</h1>
+
+
+            <button onclick="btn()">Respuesta 1</button><br><br>
+
+            <button onclick="btn()">Respuesta 2</button><br><br>
+
+            <button onclick="btn()">Respuesta 3</button><br><br>
+
+
         </form>
     </div>
 </body>
