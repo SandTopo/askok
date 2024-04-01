@@ -8,7 +8,8 @@ public class Respuestas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String resp_final;
+    @Column(name = "resp_final")
+    private String resp;
 
     public Respuestas() {
     }
@@ -21,19 +22,19 @@ public class Respuestas {
         this.id = id;
     }
 
-    public String getResp_final() {
-        return resp_final;
+    public String getResp() {
+        return resp;
     }
 
-    public void setResp_final(String resp_final) {
-        this.resp_final = resp_final;
+    public void setResp(String resp) {
+        this.resp = resp;
     }
 
     @Override
     public String toString() {
         return "Respuestas{" +
                 "id=" + id +
-                ", resp_final='" + resp_final + '\'' +
+                ", resp='" + resp + '\'' +
                 '}';
     }
 }

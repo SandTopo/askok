@@ -46,7 +46,40 @@
     </style>
 
     <script>
-        // Tu script JavaScript aquí
+        window.onload = function() {
+            var tiempoRestante = 30; // Tiempo en segundos
+            var contadorPuntuacion = 0;
+
+            var contadorTiempo = setInterval(function() {
+                document.getElementById("contador-tiempo").innerHTML = "Tiempo restante: " + tiempoRestante + " segundos";
+                tiempoRestante--;
+                if (tiempoRestante < 0) {
+                    clearInterval(contadorTiempo);
+                    alert("¡Tiempo terminado!");
+                }
+            }, 1000);
+
+            document.getElementById("respuesta1").onclick = function() {
+                // Incrementar el contador de puntuación
+                contadorPuntuacion++;
+                // Aquí puedes agregar cualquier otra lógica relacionada con la respuesta
+            };
+
+            document.getElementById("respuesta2").onclick = function() {
+                contadorPuntuacion++;
+                // Aquí puedes agregar cualquier otra lógica relacionada con la respuesta
+            };
+
+            document.getElementById("respuesta3").onclick = function() {
+                contadorPuntuacion++;
+                // Aquí puedes agregar cualquier otra lógica relacionada con la respuesta
+            };
+
+            // Actualizar el contador de puntuación
+            function actualizarPuntuacion() {
+                document.getElementById("contador-puntuacion").innerHTML = "Puntuación: " + contadorPuntuacion;
+            }
+        };
     </script>
 
 </head>
@@ -62,15 +95,15 @@
     <div id="contador-puntuacion">Puntuación: 0</div>
     <div id="contador-preguntas">Preguntas contestadas: 0</div>
 
-    <form th:action="@{/juegofinal}" method="get">
-        <label for="labelpregunta">Pregunta:</label><br>
-        <input type="text" id="labelpregunta" name="pregunta" disabled th:value="${pregunta.getAsk_numbers()}"><br><br>
+    <form th:action="@{/juegofinal}" method="post">
 
-        <h1 id="pregunta">Pregunta</h1>
-
-        <button onclick="btn()">Respuesta 1</button><br><br>
-        <button onclick="btn()">Respuesta 2</button><br><br>
-        <button onclick="btn()">Respuesta 3</button><br><br>
+        <h1 id="pregunta1" >Pregunta:</h1>
+        <h1 id="pregunta" th:text="${pregunta.getAsk()}">Pregunta</h1>
+        <br><br>
+        <input type="hidden" name="idpregunta" th:value="${pregunta.getId()}">
+        <input name="respuesta" type="submit"  th:value="${respuesta1.getResp()}"></input><br><br>
+        <input name="respuesta" type="submit"  th:value="${respuesta2.getResp()}"></input><br><br>
+        <input name="respuesta" type="submit" th:value="${respuesta3.getResp()}"></input><br><br>
     </form>
 </div>
 </body>

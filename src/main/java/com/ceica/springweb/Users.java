@@ -15,6 +15,9 @@ public class Users {
     public String nombres;
 
     public String puntuacion;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_nombre", referencedColumnName = "idusers")
+    public List<Respuestas_users> respuestasUsers;
 
     public Users() {
     }

@@ -9,7 +9,8 @@ public class Preguntas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
-    private String ask_numbers;
+    @Column(name = "ask_numbers")
+    private String ask;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "respuestas_id", referencedColumnName = "id")
     private Respuestas respuestas;
@@ -26,12 +27,12 @@ public class Preguntas {
         this.id = id;
     }
 
-    public String getAsk_numbers() {
-        return ask_numbers;
+    public String getAsk() {
+        return ask;
     }
 
-    public void setAsk_numbers(String ask_numbers) {
-        this.ask_numbers = ask_numbers;
+    public void setAsk(String ask) {
+        this.ask = ask;
     }
 
     public Respuestas getRespuestas() {
@@ -46,7 +47,7 @@ public class Preguntas {
     public String toString() {
         return "Preguntas{" +
                 "id=" + id +
-                ", ask_numbers='" + ask_numbers + '\'' +
+                ", ask='" + ask + '\'' +
                 ", respuestas=" + respuestas +
                 '}';
     }
