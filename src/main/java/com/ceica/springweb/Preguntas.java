@@ -10,11 +10,10 @@ public class Preguntas {
 
     private Integer id;
     private String ask_numbers;
-    private Integer respuestas_id;
-
-    @OneToOne
-    @JoinColumn(name = "respuestas")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "respuestas_id", referencedColumnName = "id")
     private Respuestas respuestas;
+
 
     public Preguntas() {
     }
@@ -35,12 +34,12 @@ public class Preguntas {
         this.ask_numbers = ask_numbers;
     }
 
-    public Integer getRespuestas_id() {
-        return respuestas_id;
+    public Respuestas getRespuestas() {
+        return respuestas;
     }
 
-    public void setRespuestas_id(Integer respuestas_id) {
-        this.respuestas_id = respuestas_id;
+    public void setRespuestas(Respuestas respuestas) {
+        this.respuestas = respuestas;
     }
 
     @Override
@@ -48,7 +47,7 @@ public class Preguntas {
         return "Preguntas{" +
                 "id=" + id +
                 ", ask_numbers='" + ask_numbers + '\'' +
-                ", respuestas_id=" + respuestas_id +
+                ", respuestas=" + respuestas +
                 '}';
     }
 }

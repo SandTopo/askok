@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 public class Respuestas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Integer id;
     private String resp_final;
 

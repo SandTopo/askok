@@ -11,8 +11,9 @@ import java.util.List;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String nombres;
     public Integer idusers;
+    public String nombres;
+
     public String puntuacion;
 
     public Users() {

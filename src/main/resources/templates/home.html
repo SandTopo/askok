@@ -5,29 +5,68 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/pregu.css}">
-    <title>P R E G U N T A S   ----> OK</title>
+    <title>P R E G U N T A S ----> OK</title>
+
+    <style>
+        /* Estilos para la imagen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Estilos para los encabezados */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos para el formulario */
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos para los campos de entrada */
+        input[type="text"],
+        input[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Estilos para los botones */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
+
 <body>
 <div>
     <img th:src="@{/img/boy_ask.jpg}" alt="logo">
 </div>
 
+<h1>P R E G U N T A S ----> OK</h1>
 
-    <h1>P R E G U N T A S   ----> OK</h1>
-
-    <div>
-        <form th:action="@{/jugando}" method="get">
-            <div><label> User Name : <input type="text" name="username"/> </label></div>
-            <div><input type="submit" value="Jugar Ahora"/></div>
-        </form>
-
-    </div>
+<div>
+    <form th:action="@{/jugando}" method="get">
+        <div><label> User Name : <input type="text" name="username" /> </label></div>
+        <div><input type="submit" value="Jugar Ahora" /></div>
+    </form>
+</div>
 
 <div>
     <form th:action="@{/juegofinal}" method="get">
-        <div><input type="submit" value="Juego Final"/></div>
+        <div><input type="submit" value="Juego Final" /></div>
     </form>
-
 </div>
 </body>
+
 </html>
