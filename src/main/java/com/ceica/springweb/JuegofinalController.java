@@ -24,12 +24,17 @@ public class JuegofinalController {
         this.savedataRepository=savedataRepository;
     }
     @PostMapping("/juegofinal")
-    public String home(Model model, HttpSession httpSession, @RequestParam Integer idpregunta, @RequestParam String respuesta) {
+    public String home(Model model, HttpSession httpSession, @RequestParam(required = false) Integer idpregunta, @RequestParam(required = false) String respuesta) {
 
         Users user= (Users) httpSession.getAttribute("user");
         if(user==null){
             return  "redirect:/";
         }else{
+            if(idpregunta==null){
+                return "juegofinal";
+
+            }else{
+
             Integer respuestaId = respuestasRepository.findByresp(respuesta).getId();
             Savedata savedata=new Savedata();
             savedata.nombre=user.getIdusers();
@@ -37,7 +42,12 @@ public class JuegofinalController {
             savedata.resp=respuestaId;
             savedataRepository.save(savedata);
             return "redirect:/jugando";
+            }
         }
 
+    }
+    @GetMapping("/juegofinal")
+    public String ultimapantalla(Model model, HttpSession httpSession){
+        return "juegofinal";
     }
 }

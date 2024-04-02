@@ -28,7 +28,7 @@
         }
 
         /* Estilos para los botones de respuesta */
-        button {
+        input {
             display: block;
             margin: 0 auto;
             margin-top: 10px;
@@ -40,15 +40,16 @@
             border-radius: 5px;
         }
 
-        button:hover {
+        input:hover {
             background-color: #45a049;
         }
     </style>
 
     <script>
         window.onload = function() {
-            var tiempoRestante = 30; // Tiempo en segundos
+            var tiempoRestante = 60; // Tiempo en segundos
             var contadorPuntuacion = 0;
+            var preguntas = 0;
 
             var contadorTiempo = setInterval(function() {
                 document.getElementById("contador-tiempo").innerHTML = "Tiempo restante: " + tiempoRestante + " segundos";
@@ -59,9 +60,12 @@
                 }
             }, 1000);
 
+
+
             document.getElementById("respuesta1").onclick = function() {
                 // Incrementar el contador de puntuación
-                contadorPuntuacion++;
+                plusplus();
+                preguntas++;
                 // Aquí puedes agregar cualquier otra lógica relacionada con la respuesta
             };
 
@@ -75,10 +79,18 @@
                 // Aquí puedes agregar cualquier otra lógica relacionada con la respuesta
             };
 
-            // Actualizar el contador de puntuación
             function actualizarPuntuacion() {
                 document.getElementById("contador-puntuacion").innerHTML = "Puntuación: " + contadorPuntuacion;
             }
+            function actualizarPreguntas() {
+                document.getElementById("contador-preguntas").innerHTML = "Preguntas contestadas: " + preguntas;
+            }
+
+            function plusplus(){
+                contadorPuntuacion++
+            }
+            // Actualizar el contador de puntuación
+
         };
     </script>
 
@@ -91,8 +103,8 @@
 <h1>P R E G U N T A S ----> OK</h1>
 <div>
     <div><p th:text="${user.nombres}"></p></div>
-    <div id="contador-tiempo">Tiempo restante: 30 segundos</div>
-    <div id="contador-puntuacion">Puntuación: 0</div>
+    <div id="contador-tiempo">Tiempo restante: 60 segundos</div>
+    <div id="contador-puntuacion">Puntuación:0</div>
     <div id="contador-preguntas">Preguntas contestadas: 0</div>
 
     <form th:action="@{/juegofinal}" method="post">

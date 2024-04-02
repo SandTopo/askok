@@ -45,6 +45,27 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        li:first-child {
+            font-size: 16px;
+            font-weight: bold;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
     </style>
 </head>
 
@@ -66,6 +87,24 @@
     <form th:action="@{/juegofinal}" method="get">
         <div><input type="submit" value="Resultados" /></div>
     </form>
+    <div>
+        <h1>Metodo de Juego</h1>
+        <h2>Reglas del juego:</h2>
+        <ul>
+            <li>Pasos para Jugar    P R E G U N T A S   ----> OK</li>
+            <br>
+            <li>El juego está basado en preguntas cotidianas.</li>
+            <li>Se te proporcionará una pregunta aleatoria.</li>
+            <li>Deberás seleccionar una de las tres posibles respuestas.</li>
+            <li>Al acertar, avanzarás a la siguiente pregunta.</li>
+            <li>Al llegar al límite final, se mostrarán los resultados finales.</li>
+            <li>La puntuación se calcula en función de los aciertos y fallos.</li>
+            <br>
+            <li>Se te proporciona una codificación como EJEMPLO (13)(1)(13)(1) = POPO.</li>
+            <br>
+            <li>Gracias por         J U G A R    C O N     P R E G U N T A S   ----> OK</li>
+        </ul>
+    </div>
 </div>
 </body>
 
